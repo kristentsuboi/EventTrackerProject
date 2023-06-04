@@ -51,6 +51,8 @@ My project is a vacation tracker. It will allow me to enter information about my
   </tr>
 </table>
 
+![Screenshot](EHR.png)
+
 # Technologies Used
 - RESTful Services
 - Java
