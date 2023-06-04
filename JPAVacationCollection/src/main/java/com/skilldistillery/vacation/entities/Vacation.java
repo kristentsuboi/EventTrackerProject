@@ -1,5 +1,6 @@
 package com.skilldistillery.vacation.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -7,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Vacation {
@@ -23,11 +27,22 @@ public class Vacation {
 	private String imageUrl;
 	
 	private String description;
+	@JsonIgnore
+	@OneToMany(mappedBy="vacation")
+	private List<Comment> comments;
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 
 	@Override
 	public String toString() {
 		return "Vacation [id=" + id + ", country=" + country + ", province=" + province + ", imageUrl=" + imageUrl
-				+ ", description=" + description + "]";
+				+ ", description=" + description + ", comments=" + comments + "]";
 	}
 
 	@Override

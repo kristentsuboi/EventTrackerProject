@@ -2,7 +2,6 @@ package com.skilldistillery.vacation.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -14,11 +13,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class VacationTest {
-	
+class CommentTest {
+
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private Vacation vaca;
+	private Comment comment;
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -33,26 +32,26 @@ class VacationTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		vaca = em.find(Vacation.class, 1);
+		comment = em.find(Comment.class, 1);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 		em.close();
-		vaca = null;
+		comment = null;
 	}
 
 	@Test
-	void test_Vacation_basic_mapping() {
-		assertNotNull(vaca);
-		assertEquals("Amsterdam", vaca.getProvince());
+	void test_Comment_basic_mapping() {
+		assertNotNull(comment);
+		assertEquals("Kristen", comment.getName());
+		assertEquals(1, comment.getVacation().getId());
 	}
 	
 	@Test
-	void test_Vacation_Comment_OneToMany() {
-		assertNotNull(vaca);
-		assertTrue(vaca.getComments().size() > 0);
-		assertEquals(1, vaca.getComments().size());
+	void test_Comment_Vacation_ManyToOne() {
+		assertNotNull(comment);
+		assertEquals("Amsterdam", comment.getVacation().getProvince());
 	}
 
 }
