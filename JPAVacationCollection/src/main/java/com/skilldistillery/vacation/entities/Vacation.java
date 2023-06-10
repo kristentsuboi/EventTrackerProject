@@ -27,9 +27,19 @@ public class Vacation {
 	private String imageUrl;
 	
 	private String description;
-	@JsonIgnore
+	
+	private String name;
+ 
 	@OneToMany(mappedBy="vacation")
 	private List<Comment> comments;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public List<Comment> getComments() {
 		return comments;
@@ -42,7 +52,7 @@ public class Vacation {
 	@Override
 	public String toString() {
 		return "Vacation [id=" + id + ", country=" + country + ", province=" + province + ", imageUrl=" + imageUrl
-				+ ", description=" + description + ", comments=" + comments + "]";
+				+ ", description=" + description + ", name=" + name + "]";
 	}
 
 	@Override

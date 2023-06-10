@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Comment {
 	@Id
@@ -17,8 +19,16 @@ public class Comment {
 	
 	private String name;
 	
+	public Vacation getVacation() {
+		return vacation;
+	}
+
+	public void setVacation(Vacation vacation) {
+		this.vacation = vacation;
+	}
+
 	private String content;
-	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="vacation_id")
 	private Vacation vacation;
@@ -47,13 +57,6 @@ public class Comment {
 		this.content = content;
 	}
 
-	public Vacation getVacation() {
-		return vacation;
-	}
-
-	public void setVacation(Vacation vacation) {
-		this.vacation = vacation;
-	}
 
 	@Override
 	public int hashCode() {
@@ -74,7 +77,7 @@ public class Comment {
 
 	@Override
 	public String toString() {
-		return "Comment [id=" + id + ", name=" + name + ", content=" + content + ", vacation=" + vacation + "]";
+		return "Comment [id=" + id + ", name=" + name + ", content=" + content + "]";
 	}
 
 	public Comment() {

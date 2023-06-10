@@ -6,13 +6,18 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.vacation.entities.Comment;
 import com.skilldistillery.vacation.entities.Vacation;
+import com.skilldistillery.vacation.repositories.CommentRepository;
 import com.skilldistillery.vacation.repositories.VacationRepository;
 
 @Service
 public class VacationServiceImpl implements VacationService {
 	@Autowired
 	private VacationRepository vacaRepo;
+	
+	@Autowired
+	private CommentRepository commentRepo;
 
 	@Override
 	public List<Vacation> listAllVacations() {
@@ -53,9 +58,12 @@ public class VacationServiceImpl implements VacationService {
 		Optional<Vacation> optVaca = vacaRepo.findById(vacaId);
 		if (optVaca.isPresent()) {
 			Vacation vaca = optVaca.get();
+			for (Comment comment : vaca.getComments()) {
+				commentRepo.delete(comment);
+			}
 			vacaRepo.delete(vaca);
 		}
-		return false;
+		return true;
 	}
 
 }

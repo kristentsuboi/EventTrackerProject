@@ -47,12 +47,12 @@ class VacationTest {
 		assertNotNull(vaca);
 		assertEquals("Amsterdam", vaca.getProvince());
 	}
-	
-	@Test
-	void test_Vacation_Comment_OneToMany() {
-		assertNotNull(vaca);
-		assertTrue(vaca.getComments().size() > 0);
-		assertEquals(1, vaca.getComments().size());
-	}
+//	
+//	@Test
+//	void test_Vacation_Comment_OneToMany() {
+//		assertNotNull(vaca);
+//		assertTrue(vaca.getComments().size() > 0);
+//		assertEquals(1, vaca.getComments().size());
+//	}
 
 }

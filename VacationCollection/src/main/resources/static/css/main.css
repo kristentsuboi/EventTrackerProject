@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body{
+	background-color: #E6E6FA;
+}
+.imageThumbnail {
+	height: 120px;
+}
+.detailImage {
+	width: 100%;
+	height: auto;
+}
+h2{
+	color: red;
+}
