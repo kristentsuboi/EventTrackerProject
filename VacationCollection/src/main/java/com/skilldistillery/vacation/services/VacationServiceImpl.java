@@ -48,6 +48,7 @@ public class VacationServiceImpl implements VacationService {
 			updated.setCountry(vaca.getCountry());
 			updated.setProvince(vaca.getProvince());
 			updated.setImageUrl(vaca.getImageUrl());
+			updated.setName(vaca.getName());
 			updated.setDescription(vaca.getDescription());
 		}
 		return vacaRepo.saveAndFlush(updated);

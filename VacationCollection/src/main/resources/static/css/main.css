@@ -1,15 +1,41 @@
 @charset "UTF-8";
 
 body{
-	background-color: #E6E6FA;
+	background-color: black;
+	font-family: georgia, serif;
+	color: purple;
+
 }
 .imageThumbnail {
 	height: 120px;
 }
 .detailImage {
-	width: 100%;
+	width: 50%;
 	height: auto;
+}
+h1{
+	color: white;
 }
 h2{
 	color: red;
+}
+
+table{
+	text-align: center;
+}
+
+
+#vacaListDiv{
+
+	border: 1px solid purple;
+}
+#vacaDetailsDiv {
+	border: 1px solid red;
+
+}
+#newVacaDiv {
+	width: 50%;
+}
+#updateVacaDiv {
+	width: 50%;
 }

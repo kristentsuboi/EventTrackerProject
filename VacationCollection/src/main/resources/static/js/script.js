@@ -91,7 +91,7 @@ function displayAllVacations(vacaList) {
 			row.addEventListener('click', function(evt) {
 				let vacaId = vaca.id;
 				getVacationDetails(vacaId);
-				
+
 			});
 		}
 		let result = extractValue(vacaList, 'country');
@@ -106,14 +106,14 @@ function displayAllVacations(vacaList) {
 }
 
 function removeDuplicates(arr) {
-    return arr.filter((item,
-        index) => arr.indexOf(item) === index);
+	return arr.filter((item,
+		index) => arr.indexOf(item) === index);
 }
 
 
-function extractValue(arr, prop){
-	let extractedValue= [];
-	for(let i=0; i<arr.length; ++i){
+function extractValue(arr, prop) {
+	let extractedValue = [];
+	for (let i = 0; i < arr.length; ++i) {
 		extractedValue.push(arr[i][prop]);
 	}
 	return extractedValue;
@@ -225,34 +225,50 @@ function displayUpdateForm(vaca) {
 	input = document.createElement('input');
 	input.name = 'country';
 	input.type = 'text';
+	input.classList.add("form-control");
 	input.value = vaca.country;
 	form.appendChild(input);
+	let br = document.createElement('br');
+	form.appendChild(br);
 	input = document.createElement('input');
 	input.name = 'province';
 	input.type = 'text';
+	input.classList.add("form-control");
 	input.value = vaca.province;
 	form.appendChild(input);
+	br = document.createElement('br');
+	form.appendChild(br)
 	input = document.createElement('input');
 	input.name = 'name';
 	input.type = 'text';
+	input.classList.add("form-control");
 	input.value = vaca.name;
 	form.appendChild(input);
+	br = document.createElement('br');
+	form.appendChild(br)
 	input = document.createElement('input');
 	input.name = 'imageUrl';
 	input.type = 'text';
+	input.classList.add("form-control");
 	input.value = vaca.imageUrl;
 	form.appendChild(input);
+	br = document.createElement('br');
+	form.appendChild(br)
 	input = document.createElement('input');
 	input.name = 'description';
 	input.type = 'text';
+	input.classList.add("form-control");
+
 	input.value = vaca.description;
 	form.appendChild(input);
+	br = document.createElement('br');
+	form.appendChild(br)
 
 	let updateButton = document.createElement('button');
 	updateButton.textContent = 'Click to Update';
 	form.appendChild(updateButton);
 	updateButton.classList.add("btn");
-	updateButton.classList.add("btn-secondary");
+	updateButton.classList.add("btn-success");
 
 	updateButton.addEventListener('click', function(evt) {
 		evt.preventDefault();
@@ -263,7 +279,7 @@ function displayUpdateForm(vaca) {
 		let newName = form.name.value;
 		let newImage = form.imageUrl.value;
 		let newDescription = form.description.value;
-		let updatedVacation = { id: vaca, country: newCountry, province: newProvince, name: newName, imageUrl: newImage, description: newDescription}
+		let updatedVacation = { id: vaca, country: newCountry, province: newProvince, name: newName, imageUrl: newImage, description: newDescription }
 		updateVacation(updatedVacation);
 
 	});
@@ -277,7 +293,7 @@ function updateVacation(updatedVacation) {
 	xhr.setRequestHeader("Content-type", "application/json");
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4) {
-			if ( xhr.status == 200 || xhr.status == 201 ) {
+			if (xhr.status == 200 || xhr.status == 201) {
 				let vacation = JSON.parse(xhr.responseText);
 				console.log("Vacation updated " + vacation);
 				getVacationDetails(vacation.id);

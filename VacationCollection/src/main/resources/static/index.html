@@ -17,11 +17,11 @@
 	<h1>Welcome to the Vacation Collection</h1>
 	<div id='vacaDetailsDiv'></div>
 	<div id='updateVacaDiv'></div>
-	<div id="vacaListDiv">
+	<div id="vacaListDiv" class>
 	<!-- table of vacations, each clickable to show details. -->
-	<table>
+	<table class="table table-hover table-dark" style="width:50%">
 	<thead>
-	<tr><th>Vacation ID</th>
+	<tr class="bg-primary"><th>Vacation ID</th>
 	<th>Location</th>
 	<th>Image</th>	
 	</tr>
@@ -34,12 +34,12 @@
 	<div id='newVacaDiv'>
 	<h3>Add a Vacation</h3>
 	<form name="addVacationForm">
-		<input type='text' name='country' placeholder="Country"><br> 
-		<input type='text' name='province' placeholder="Province/State"><br> 
-		<input type='text' name='name' placeholder="Your Name"><br> 
-		<input type="text" name='imageUrl' placeholder="Image URL"><br>
-		<input type="text" name='description' placeholder="Description"><br>
-		<button name="addVacation">Add Vacation</button>
+		<input class="form-control" type='text' name='country' placeholder="Country"><br> 
+		<input class="form-control" type='text' name='province' placeholder="Province/State"><br> 
+		<input class="form-control" type='text' name='name' placeholder="Your Name"><br> 
+		<input class="form-control" type="text" name='imageUrl' placeholder="Image URL"><br>
+		<input class="form-control" type="text" name='description' placeholder="Description"><br>
+		<button type="button" class="btn btn-success" name="addVacation">Add Vacation</button>
 	</form></div>
 	
 	</main>
