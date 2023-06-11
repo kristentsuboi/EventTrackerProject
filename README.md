@@ -1,7 +1,7 @@
 # EventTrackerProject
 
 # Overview
-My project is a vacation tracker. It will allow me to enter information about my past vacations with full CRUD using REST. This program will also let people comment on your vacation and tell you what they think about you. 
+My project is a vacation tracker. It will allow users to enter information about past vacations with full CRUD using REST. This application uses Javascript to access data and manipulate the DOM.
 ## Expected Routes
 <table>
   <tr>
@@ -51,6 +51,9 @@ My project is a vacation tracker. It will allow me to enter information about my
   </tr>
 </table>
 
+## Accessing the project
+-insert link
+
 ## Entity Relationship Model
 ![Screenshot](EHR.png)
 
@@ -73,6 +76,11 @@ My project is a vacation tracker. It will allow me to enter information about my
 - Spring Boot
 - MySQL 
 - Postman
+- Javascript
+- DOM
+- Bootstrap
 
 # Lessons Learned
-This week I solidified my JPA knowledge by building entities for this project. I used a REST service to access database objects. I also solidified my understanding on HTTP Requests/Responses. Testing in Postman was pretty simple.
+This project has allowed me to solidify my JPA knowledge by building entities for this project. I used a REST service to access database objects. I also solidified my understanding on HTTP Requests/Responses. Testing in Postman was pretty simple. Javascript was extremely intimidating for some reason, but using js to build the front end of this application was very comfortable. 
+
+
