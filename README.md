@@ -52,7 +52,7 @@ My project is a vacation tracker. It will allow users to enter information about
 </table>
 
 ## Accessing the project
--insert link
+-<a href="http://3.129.144.36:8080/VacationCollection/">Click Here </a>
 
 ## Entity Relationship Model
 ![Screenshot](EHR.png)
