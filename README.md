@@ -34,25 +34,10 @@ My project is a vacation tracker. It will allow users to enter information about
        <td><code>DELETE api/vacations/{vacaId}</code></td>
     <td>Deletes a vacation</td>
   </tr>
-   <tr>
-     <td><code>List< Comment ></code></td>
-     <td><code>GET api/vacations/{vacaId}/comments</code></td>
-    <td>Returns a list of comments for that vacation id.</td>
-  </tr>
-   <tr>
-     <td><code>Comment</code></td>
-     <td><code>POST api/vacations/{vacaId}/comments</code></td>
-    <td>Add comment to a vacation by id</td>
-  </tr>
-   <tr>
-     <td><code>void</code></td>
-     <td><code>DELETE api/vacations/{vacaId}/comments/{commentId}</code></td>
-    <td>Deletes a comment</td>
-  </tr>
 </table>
 
 ## Accessing the project
--insert link
+-<a href="http://3.129.144.36:8080/VacationCollection/">Click Here </a>
 
 ## Entity Relationship Model
 ![Screenshot](EHR.png)
