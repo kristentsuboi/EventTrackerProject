@@ -61,11 +61,11 @@ My project is a vacation tracker. It will allow users to enter information about
 - Spring Boot
 - MySQL 
 - Postman
-- Javascript
+- Angular
 - DOM
 - Bootstrap
 
 # Lessons Learned
-This project has allowed me to solidify my JPA knowledge by building entities for this project. I used a REST service to access database objects. I also solidified my understanding on HTTP Requests/Responses. Testing in Postman was pretty simple. Javascript was extremely intimidating for some reason, but using js to build the front end of this application was very comfortable. 
+This project has allowed me to solidify my JPA knowledge by building entities for this project. I used a REST service to access database objects. I also solidified my understanding on HTTP Requests/Responses. Application reconfigured from Javascript to Angular with the use of components, services, and directives. 
 
 
