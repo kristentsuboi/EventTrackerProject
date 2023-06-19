@@ -1,0 +1,59 @@
+<div id="header">
+<h1>Vacation Collection</h1>
+<p>This collection includes {{vacaCount}} vacations.</p>
+</div>
+<button *ngIf='!addToCollection && !selected' class="btn btn-success" (click)="addToCollection = true">Add Vacation to the Collection</button>
+<div id="addVacation" *ngIf="!selected && addToCollection">
+  <form>
+    Country: <input type="text" name="country" [(ngModel)]="newVaca.country"><br>
+    Province/State: <input type="text" name="province" [(ngModel)]="newVaca.province"><br>
+    Description: <input type="textarea" name="description" [(ngModel)]="newVaca.description"><br>
+    Image URL: <input type="text" name="imageUrl" [(ngModel)]="newVaca.imageUrl"><br>
+    Your Name: <input type="text" name="name" [(ngModel)]="newVaca.name"><br>
+    <button class='btn btn-info' (click)="addVaca(newVaca)">Add Vacation</button>
+  </form>
+</div>
+<div class="row">
+<div class='col' id='vacationList' >
+  <table class="table">
+     <thead class="thead-dark">
+      <th>Location </th>
+      <th>Image</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vacation of vacationList" (click)="displayVacation(vacation)">
+        <td>{{vacation.province}}, {{vacation.country}}</td>
+        <td><img src="{{vacation.imageUrl}}"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col" id="vacationDetails" *ngIf="selected && !editing">
+  <h2>Vacation Details</h2>
+<h3>{{selected.province}}, {{selected.country}}</h3>
+<h4>Vacation ID: {{selected.id}} / Vacationer: {{selected.name}}</h4>
+<p>{{selected.description}}</p>
+<img src="{{selected.imageUrl}}"><br><br>
+<button class="btn btn-success" (click)='displayTable()'>Back</button>
+<button class="btn btn-primary" (click)="setEditVacation()">Edit</button>
+<button class="btn btn-danger"(click)='deleteVaca(selected.id)'>Delete</button>
+</div>
+</div>
+
+
+<div *ngIf="editing">
+  <h3>Edit vacation details below: </h3>
+  <label for="country">Country</label>
+  <input type="text" name="country" [(ngModel)]="editing.country"><br>
+  <label for="province">Province/State</label>
+  <input type="text" name="province" [(ngModel)]="editing.province"><br>
+  <label for="description">Description</label>
+<input type="textarea" name="description" [(ngModel)]="editing.description"><br>
+<label for="imageUrl">Image URL</label>
+<input type="text" name="imageUrl" [(ngModel)]="editing.imageUrl"><br>
+<label for="name">Name</label>
+<input type="text" name="name" [(ngModel)]="editing.name"><br>
+<button class="btn btn-danger" (click)='editing = null'>Cancel</button>
+  <button class="btn btn-info" (click)="updateVaca(editing)">Save</button>
+</div>
+
